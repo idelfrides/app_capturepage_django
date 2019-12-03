@@ -2,25 +2,25 @@
 
 
 ### The Project
-This is an app created to give some value content or material that might help some people.
+This is an app created to give some value content and material that might help some people.
 
 
-The App support two resource - image and video and It defines two(2) way to set up the content/mateil image. 
+The App support two resource (type of media) - image and video and It defines two way to set up the position of content. 
 
 ### Activation of venv
-You need to activate and activate a virtualenv for project before you make any action on the app. So, do like this ...
-* 1 : **virtualenv -p pythonX.X <ENV_NAME>**
-* 2 : **. <ENV_NAME>/bin/activate** 
+You need to  install and activate a virtualenv for this  project before you make any action on the app. So, do like this ...
+* 1 : **virtualenv -p python3.X <ENV_NAME>**
+* 2 : **. <ENV_NAME>/bin/activate or source <ENV_NAME>/bin/activate** 
 
-If the ctivation done successfuly, you going to something like this (pagecapvenv) your\path_to_project>.
-If you see that on your Terminal, Congratulations. Good work. Go a head reading this page.
+If the activation done successfuly, you going to see something like this (<ENV_NAME>) your/path/to/project>.
+If you see that on your shell, Congratulations. Good work. Go a head reading this page.
 Finally, enjoy the app and be happy.
 
 ### Access ADMIM Dashboard
-To access the jango administration dashboard you gonna need to create your superuser with command:
+To access the django administration dashboard you gonna need to create your own superuser with command:
 > **./manage.py createsuperuser --email [test@admin.com] --username [USERNAME]**
 
-> Than, inform your password
+> It is will switch to define your password. Than, inform your password
 
 
 [MORE ABOUT THIS PROJECT](https://github.com/idelfrides/App_Page_Captura_image/wiki)
