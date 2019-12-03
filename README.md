@@ -1,4 +1,4 @@
-# App Page Capture with image Django
+# App Capture Page in Django
 
 
 ### The Project
