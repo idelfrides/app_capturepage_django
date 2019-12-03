@@ -1,0 +1,143 @@
+{% load staticfiles %}
+
+<!--<!DOCTYPE html>-->
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <meta name="description" content=" PAGINA DE CAPTURA 1.0.0 | 05/JUN/2019">
+    <meta name="keywords" content="DJANGO, PYTHON, HTML, CSS">
+    <meta name="author" content="IDELFRIDES JORGE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- MY STYLESHEET FILES -->
+    <link rel="stylesheet" href='{% static "css/base.css" %}'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+        input{
+            border-radius: 5px;
+        }
+
+        button{
+            border-radius:5px;
+        }
+
+        img{
+            max-width: 90%;
+        }
+    </style>
+</head>
+<body class="w-100 m-0 p-0" style="background-color:#E9ECEF;">
+    <div class="w-100 mt-0 bg-dark">
+        <!-- ************ evento ************** -->
+        <section  class="container-fluid border w-100 bg-dark py-5">
+            
+            {% for d in dados %}
+            
+            <header class="border-white">
+                <h1  class="text-white font-weight-bold text-uppercase text-center display-4">{{ d.headline }}</h1>
+            </header>
+            <p class="row col-12 col-sm-12 col-md-10 text-white text-justify rounded border-white pb-3 my-3  mx-auto ">
+                {{ d.copy_descricao }}
+            </p> <br>
+
+            {% endfor %}
+
+            {% if posicao == 'E' %}
+            <!-- video à esquerda -->
+            <div class="row col mx-auto">
+                <div class="col-12 col-sm-12 col-lg-6">
+                    <div class="embed-responsive embed-responsive-1by1">
+                        <!--<iframe  class="embed-responsive-item" src="/media/videos/2_exercios-garrafas-plasticas.Mp4" allowfullscreen></iframe> -->
+                        <iframe  class="embed-responsive-item" src="/media/videos/3-exercicios-abdomem.Mp4" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-lg-6 my-auto my-sm-auto">
+                    <div class="mb-1 mb-sm-2 mb-lg-5"></div><br><br>
+                    <form method="POST" class="align-middle mt-2 mt-sm-2 mt-lg-5">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input style="border-radius:5px;" type="email" class="form-control form-control-lg rounded-lg"  placeholder="Enter your email" name="email" required>
+                        </div><br>
+
+                        <button type="submit" class="btn btn-success btn-lg w-100 text-white font-weight-bold text-uppercase">Baixe o seu agora</button>
+                    </form>
+                </div>
+            </div>
+            {% elif posicao == 'D' %}
+             <!-- imagem à direita {{ con.tipo_media }} -->
+            <div class="row col-12 border mx-auto ">
+                <div class="col-12 col-sm-12 col-lg-6 mb-5 mb-sm-5 mt-0 mt-sm-0">
+                    <div class="mb-5"></div><br><br>
+                    <form method="POST" class="align-middle mt-5">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input 
+                            style="border-radius:5px;" 
+                            type="email" 
+                            class="form-control form-control-lg rounded-lg"  
+                            placeholder="Enter your email" 
+                            name="email" 
+                            required>
+                        </div><br>
+
+                        <button type="submit" class="btn btn-success btn-lg w-100 text-white font-weight-bold text-uppercase">Baixe o seu agora</button>
+                    </form>
+                 </div>
+                <div class="col-12 col-sm-12 col-lg-6">
+                    <div class="embed-responsive embed-responsive-1by1">
+                        <iframe 
+                           class="embed-responsive-item" 
+                           src="/media/videos/2_exercios-garrafas-plasticas.Mp4" 
+                           allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+
+            {% endif %}
+        </section>
+
+        <!-- footer -->
+        <div class="py-2" style="background-color:#643885;" ></div>
+        <section class="">
+            <div class="py-3 text-white bg-secondary" style="font-size:13pt;">
+                <!--<a href="{% url 'url_home' %}"><img src="media/images/Logo-Ev-EEEP.png" width="150" class="m-0 p-0"></a> -->
+                <h6 class="text-center text-uppercase mt-3"><strong> Nome Empresa </strong></h6>
+                <p class="text-center mt-0 pt-0">Slogan da Empresa entra aqui.</p>
+                <p class="text-justify text-light mx-5"> It is a long established 
+                    fact that a reader will be
+                    distracted by the readable content 
+                    of a page when looking at its layout.
+                    The point of using Lorem Ipsum is that
+                    it has a more-or-less normal 
+                    distribution of letters, 
+                    as opposed to using 'Content here, content here',
+                    making it look like readable English. 
+                    Many desktop publishing packages and
+                    web page editors now use Lorem Ipsum
+                    as thei default model text, 
+                    and a search for 'lorem ipsum'
+                    will uncover many web sites still 
+                    in their infancy. Various versions
+                    have evolved over the years, 
+                    sometimes by accident, sometimes on
+                    purpose (injected humour and the like).
+                </p>
+            </div>
+          
+            <section class="text-white text-weight-bold text-center bg-dark ">
+                <footer class="bg-dark py-3 mx-auto">
+                    <p class="mx-2">Copyright &copy; 2019 | Pagína de captura com imagem - Todos os direitos reservados <br><strong> By  Eng. Idelfrides Jorge.</strong></p>
+                </footer>
+            </section>
+        </section>
+    </div>
+</body>
+</html>

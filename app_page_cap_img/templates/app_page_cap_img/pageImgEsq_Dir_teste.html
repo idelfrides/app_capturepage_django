@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+<!-- {% load staticfiles %}-->
+
+{% block head_title %}{{ block.super }} | {{ page.title }}{% endblock head_title %}
+
+{% block content %}
+
+    <div class="w-100 mt-5">
+        <!-- ************ evento ************** -->
+        <section class="container border w-100 bg-dark py-5">
+            {% for d in dados %}
+            <h2 class="text-white text-center">IMAGEM</h2>
+            <header class="border border-white">
+                <h1  class="text-white font-weight-bold text-uppercase text-center display-4">{{ d.headline }}</h1>
+            </header>
+            <p class="row col-12 col-sm-12 col-md-10 text-white text-center rounded border border-white pb-3 my-3  mx-auto">
+                {{ d.copy_descricao }}
+            </p> <br>
+            {% endfor %}
+
+            {% if posicao == 'D' %}
+            <!-- imagem à direita -->
+            <div class="row col border mx-auto ">
+                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-5 mb-sm-5 mt-0 mt-sm-0">
+                     <div class="mb-5"></div><br>
+                      <form method="POST" class="align-middle mt-5 w-100">
+                          {% csrf_token %}
+                          <div class="form-group">
+                              <input style="border-radius:5px;" type="email" class="form-control form-control-lg rounded-lg"  placeholder="Enter email" name="email">
+                          </div><br>
+
+                          <button type="submit" class="btn btn-success btn-lg w-100 text-white font-weight-bold text-uppercase">Baixe o seu agora</button>
+                      </form>
+                 </div>
+                 <div class="col-6 col-sm-12 col-md-12 col-lg-6">
+                      <figure class="rounded">
+                           <!--<img src="{{d.userprofile.image.url}}" width="100"> -->
+                           <!-- <img src="{{d.cover.image.url}}" width="100">-->
+                           <img src="/media/images/20181113_094714-1.jpg" class="rounded">
+                      </figure>
+                 </div>
+            </div>
+            {% elif posicao == 'E' %}
+            <div class="row col border mx-auto">
+                 {{ con.midea_position }}
+                 <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                      <figure class="rounded">
+                           <!--<img src="{{d.userprofile.image.url}}" width="100"> -->
+                           <!-- <img src="{{d.cover.image.url}}" width="100">-->
+                           <img src="/media/images/traduco-ingls-portugus-e-vice-versajpg.jpg" class="rounded">
+                      </figure>
+                 </div>
+                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 my-auto my-sm-auto border">
+                     <div class="mb-1 mb-sm-2 mb-lg-5"></div><br><br>
+                      <form method="POST" class="align-middle mt-2 mt-sm-2 mt-lg-5">
+                          {% csrf_token %}
+                          <div class="form-group">
+                              <input style="border-radius:5px;" type="email" class="form-control form-control-lg rounded-lg"  placeholder="Enter email" name="email">
+                          </div><br>
+
+                          <button type="submit" class="btn btn-success btn-lg w-100 text-white font-weight-bold text-uppercase">Baixe o seu agora</button>
+                      </form>
+                 </div>
+            </div>
+            {% else %}
+
+            {% endif%}
+        </section>
+
+        <br><br><br>
+        <hr>
+        <br><br>
+
+        {{ block.super }}
+
+    </div>
+
+{% endblock content %}
+

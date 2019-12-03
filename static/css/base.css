@@ -1,0 +1,57 @@
+h1#teste{
+    color: yellow;
+}
+
+/*
+@media only screen and (min-width: 988px){
+    div#divform_right{
+        position: relative;
+        bottom: 30%;
+
+    }
+}*/
+
+@media only screen and (min-width: 988px){
+    form#form_right{
+        position: relative;
+        top: 30%;
+        margin: 0 auto;
+    }
+} 
+
+@media only screen and (max-width: 320px){
+    div#container_img_form{
+        position: relative;
+        margin-bottom: 50%;
+    }
+    form#form_right{
+        position: absolute;
+        top: 90%;
+        width: auto;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 988px){
+    div#container_img_form{
+        position: relative;
+        margin-bottom: 30%;
+    }
+    div#divform_right{
+        position: absolute;
+        top: 90%;
+        width: 90%;
+        margin: auto;
+    }
+}
+
+/* mckc@IJwm19me 
+
+@media only screen and (min-width: 988px){
+    div#form_right{
+        position: relative;
+        top: 30%;
+        margin: 0 auto;
+        background-color: cyan;
+    }
+}*/
