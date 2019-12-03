@@ -23,7 +23,7 @@ To access the django administration dashboard you gonna need to create your own 
 > It is will switch to define your password. Than, inform your password
 
 
-[MORE ABOUT THIS PROJECT](https://github.com/idelfrides/App_Page_Captura_image/wiki)
+[MORE ABOUT THIS PROJECT](https://github.com/idelfrides/app_capturepage/wiki)
 
 
 -------------
