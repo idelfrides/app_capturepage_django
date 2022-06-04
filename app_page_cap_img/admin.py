@@ -8,7 +8,7 @@ from .models import Media, Configuracao
 
 class ConfigModelAdmin(admin.ModelAdmin):
     list_display = ['__str__', "update", 'timestamp']
-    list_display_links = ['update']
+    list_display_links = ['update', '__str__']
     list_filter = ["update"]
     search_fields = ['tipo_media','midea_position']
     class Meta:
@@ -17,7 +17,7 @@ class ConfigModelAdmin(admin.ModelAdmin):
 
 class MediaModelAdmin(admin.ModelAdmin):
     list_display = ['__str__', "update", 'timestamp']
-    list_display_links = ['update']
+    list_display_links = ['update', '__str__']
     list_filter = ["update"]
     search_fields = ['image','arquivo_pdf']
     class Meta:
@@ -26,7 +26,7 @@ class MediaModelAdmin(admin.ModelAdmin):
 
 class MaterialModelAdmin(admin.ModelAdmin):
     list_display = ['material',  'user', "update", 'timestamp']
-    list_display_links = ['update']
+    list_display_links = ['update',]
     list_filter = ["update", 'user', 'material']
     search_fields = [ 'user', 'material','headline']
     list_editable = ['material']
@@ -45,15 +45,15 @@ class LeadEmailModelAdmin(admin.ModelAdmin):
 
 
 admin.site.register(
-    PageCapImage, 
+    PageCapImage,
     MaterialModelAdmin
 )
 admin.site.register(
-    LeadsEmail, 
+    LeadsEmail,
     LeadEmailModelAdmin
 )
 admin.site.register(
-    Configuracao, 
+    Configuracao,
     ConfigModelAdmin
 )
 admin.site.register(Media, MediaModelAdmin)

@@ -9,9 +9,11 @@ import time
 
 def modeloPageCap(request):
     if not request.user.is_staff or not request.user.is_superuser:
+        print('\n\n\n CAIU NO IF 1')
         raise Http404
 
     if not request.user.is_authenticated:
+        print('\n\n\n CAIU NO IF 2')
         raise Http404
 
     if request.method == "POST":  #POST method
@@ -22,6 +24,7 @@ def modeloPageCap(request):
 
         return redirect('url_download')
     else:  # GET method
+        # import pdb; pdb.set_trace()
         data_conf = {}
         data_conf['config'] = Configuracao.objects.all()
 
@@ -39,51 +42,51 @@ def modeloPageCap(request):
             data['posicao'] = 'E'
             data['dados'] = PageCapImage.objects.all()
             return render(
-                request, 
-                'app_page_cap_img/pageImgEsq_Dir.html', 
+                request,
+                'app_page_cap_img/pageImgEsq_Dir.html',
                 data
             )
-        
+
         if tipo_media is 'I' and position is 'D':  # imagem à direita
             data = {}
             data['title'] = 'Home Captura | Imagem'
             data['posicao'] = 'D'
             data['dados'] = PageCapImage.objects.all()
             return render(
-                request, 
-                'app_page_cap_img/pageImgEsq_Dir.html', 
+                request,
+                'app_page_cap_img/pageImgEsq_Dir.html',
                 data
             )
-        
+
         if tipo_media is 'V' and position is 'E':  # video à esquerda
             data = {}
             data['title'] = 'Home Captura | Video'
             data['posicao'] = 'E'
             data['dados'] = PageCapImage.objects.all()
             return render(
-                request, 
-                'app_page_cap_img/pageVideoEsq_Dir.html', 
+                request,
+                'app_page_cap_img/pageVideoEsq_Dir.html',
                 data
             )
-        
+
         if tipo_media is 'V' and position is 'D':  # video à direita
             data = {}
             data['title'] = 'Home Captura | Video'
             data['posicao'] = 'D'
             data['dados'] = PageCapImage.objects.all()
             return render(
-                request, 
-                'app_page_cap_img/pageVideoEsq_Dir.html', 
+                request,
+                'app_page_cap_img/pageVideoEsq_Dir.html',
                 data
             )
         else:
             pass
-        
+
 
 def download(request):
     subject = 'Teste | envio email python'
     message = 'Olá, este é um teste de django enviando email.'
-    author_email =  settings.EMAIL_HOST_USER
+    author_email = settings.EMAIL_HOST_USER
     to_email = LeadsEmail.objects.last()
     time.sleep(3)
     print('\n\n Ultimo email: {}'
@@ -96,13 +99,13 @@ def download(request):
         message,
         author_email,
         to_list,
-        fail_silently=True
+        fail_silently=True   # True
     )
 
     print("""
-        
-         ENVIEI EMAIL PRA VC 
-        
+
+         ENVIEI EMAIL PRA VC
+
         """)
-        
+
     return redirect('url_home')
