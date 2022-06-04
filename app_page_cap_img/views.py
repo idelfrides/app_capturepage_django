@@ -9,11 +9,9 @@ import time
 
 def modeloPageCap(request):
     if not request.user.is_staff or not request.user.is_superuser:
-        print('\n\n\n CAIU NO IF 1')
         raise Http404
 
     if not request.user.is_authenticated:
-        print('\n\n\n CAIU NO IF 2')
         raise Http404
 
     if request.method == "POST":  #POST method
@@ -24,7 +22,6 @@ def modeloPageCap(request):
 
         return redirect('url_download')
     else:  # GET method
-        # import pdb; pdb.set_trace()
         data_conf = {}
         data_conf['config'] = Configuracao.objects.all()
 
