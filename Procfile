@@ -1,1 +1,1 @@
-web: gunicorn pagecapimg.wsgi
+web: gunicorn pagecapimg.wsgi --log-file -
