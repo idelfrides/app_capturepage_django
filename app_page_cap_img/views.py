@@ -7,6 +7,7 @@ from pagecapimg import settings
 import time
 
 
+
 def modeloPageCap(request):
     if not request.user.is_staff or not request.user.is_superuser:
         raise Http404
@@ -22,6 +23,7 @@ def modeloPageCap(request):
 
         return redirect('url_download')
     else:  # GET method
+        print('\n\n ENTROU AQUI \n\n')
         data_conf = {}
         data_conf['config'] = Configuracao.objects.all()
 
@@ -77,6 +79,7 @@ def modeloPageCap(request):
             )
         else:
             pass
+
 
 def download(request):
     subject = 'Teste | envio email python'

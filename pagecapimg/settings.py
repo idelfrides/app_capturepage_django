@@ -36,7 +36,7 @@ SECRET_KEY = config('SECRET_KEY')
 # DEBUG=True
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['https://ijdigitalmarketing.herokuapp.com/', 'localhost:8000']
+ALLOWED_HOSTS = ['https://ijdigitalmarketing.herokuapp.com/', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [

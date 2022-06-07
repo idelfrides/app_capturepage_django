@@ -14,3 +14,4 @@ from dj_static import Cling
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pagecapimg.settings')
 
 application = Cling(get_wsgi_application())
+# application = get_wsgi_application()
