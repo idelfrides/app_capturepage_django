@@ -36,7 +36,7 @@ def modeloPageCap(request):
         #-------------------------------------------------------------
         if tipo_media is "I" and position is "E":  # imagem à esquerda
             data = {}
-            data['title'] = 'Home Captura | Imagem'
+            data['title'] = 'Home Captura | Imagem ( E )'
             data['posicao'] = 'E'
             data['dados'] = PageCapImage.objects.all()
             return render(
