@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-
 from ctypes import cast
 from email.policy import default
 import os
@@ -36,8 +35,8 @@ SECRET_KEY = config('SECRET_KEY')
 # DEBUG=True
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-# ALLOWED_HOSTS = ['https://ijdigitalmarketing.herokuapp.com/', '127.0.0.1']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://ijdigitalmarketing.herokuapp.com/', '127.0.0.1']
+# ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
