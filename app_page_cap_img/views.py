@@ -25,7 +25,6 @@ def modeloPageCap(request):
         data_conf = {}
         data_conf['config'] = Configuracao.objects.all()
 
-
         for d in data_conf['config']:
             tipo_media = d.tipo_media
             position = d.media_position
@@ -78,7 +77,6 @@ def modeloPageCap(request):
             )
         else:
             pass
-
 
 def download(request):
     subject = 'Teste | envio email python'
